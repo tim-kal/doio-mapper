@@ -1,0 +1,94 @@
+{
+  "name": "doio-mapper",
+  "productName": "DOIO Mapper",
+  "version": "0.1.0",
+  "description": "Local visual mapper for the DOIO KB16B-02 wireless macro pad.",
+  "author": "DOIO Mapper contributors",
+  "private": true,
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/tim-kal/doio-mapper.git"
+  },
+  "type": "module",
+  "main": "electron/main.mjs",
+  "scripts": {
+    "hid:list": "node scripts/hid-list.mjs",
+    "hid:raw": "node scripts/hid-raw-open.mjs",
+    "doio:devices": "vitaly devices",
+    "doio:show": "vitaly layers -m definitions/kb16b-02-wireless-via.json",
+    "doio:positions": "vitaly layers -m definitions/kb16b-02-wireless-via.json -p",
+    "doio:save": "scripts/doio-save.sh",
+    "doio:key": "vitaly keys -m definitions/kb16b-02-wireless-via.json",
+    "doio:preview": "vitaly load -m definitions/kb16b-02-wireless-via.json -p",
+    "doio:load": "vitaly load -m definitions/kb16b-02-wireless-via.json",
+    "doio:controls": "node scripts/doioctl.mjs controls",
+    "doio:matrix": "node scripts/doioctl.mjs matrix",
+    "doio:live": "node scripts/doioctl.mjs live",
+    "doio:read": "node scripts/doioctl.mjs read",
+    "doio:set": "node scripts/doioctl.mjs set",
+    "doio:translate": "node scripts/doioctl.mjs translate",
+    "doio:apply": "node scripts/doioctl.mjs apply",
+    "doio:verify": "node scripts/doioctl.mjs verify",
+    "doio:restore": "node scripts/doio-restore-backup.mjs",
+    "doio:doctor": "node scripts/doio-doctor.mjs",
+    "doio:capture:macos": "swift scripts/capture-macos-key-events.swift",
+    "app": "node scripts/doio-app-server.mjs",
+    "desktop": "electron .",
+    "vendor:vitaly": "node scripts/vendor-vitaly.mjs",
+    "vendor:rawhid": "node scripts/build-doio-rawhid.mjs",
+    "vendor:binaries": "npm run vendor:vitaly && npm run vendor:rawhid",
+    "pack:mac": "npm run vendor:binaries && electron-builder --mac --arm64 --dir",
+    "dist:mac": "npm run vendor:binaries && electron-builder --mac --arm64"
+  },
+  "devDependencies": {
+    "electron": "^42.0.0",
+    "electron-builder": "^26.8.1",
+    "node-hid": "^3.3.0"
+  },
+  "build": {
+    "appId": "local.doio.mapper",
+    "productName": "DOIO Mapper",
+    "asar": false,
+    "afterPack": "scripts/after-pack.cjs",
+    "files": [
+      "electron/**/*",
+      "lib/**/*",
+      "scripts/doio-app-server.mjs",
+      "definitions/**/*",
+      "ui/**/*",
+      "package.json"
+    ],
+    "extraResources": [
+      {
+        "from": "vendor",
+        "to": "vendor",
+        "filter": [
+          "**/*",
+          "!**/.build-vitaly/**"
+        ]
+      }
+    ],
+    "mac": {
+      "category": "public.app-category.utilities",
+      "identity": null,
+      "target": [
+        {
+          "target": "dmg",
+          "arch": [
+            "arm64"
+          ]
+        },
+        {
+          "target": "zip",
+          "arch": [
+            "arm64"
+          ]
+        }
+      ]
+    },
+    "dmg": {
+      "artifactName": "${productName}-${version}-${arch}.${ext}"
+    }
+  }
+}

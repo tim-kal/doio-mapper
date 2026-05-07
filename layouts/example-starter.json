@@ -1,0 +1,42 @@
+{
+  "name": "Example starter layout",
+  "layer": 0,
+  "notes": [
+    "Uses simple keycodes where possible.",
+    "Knob direction labels are provisional until physical verification.",
+    "F13-F24 are useful as clean triggers for Hammerspoon, Karabiner-Elements, Shortcuts, or other host-side automation."
+  ],
+  "controls": {
+    "k1": "KC_F13",
+    "k2": "KC_F14",
+    "k3": "KC_F15",
+    "k4": "KC_F16",
+
+    "k5": "KC_F17",
+    "k6": "KC_F18",
+    "k7": "KC_F19",
+    "k8": "KC_F20",
+
+    "k9": "KC_F21",
+    "k10": "KC_F22",
+    "k11": "KC_F23",
+    "k12": "KC_F24",
+
+    "k13": "cmd+c",
+    "k14": "cmd+v",
+    "k15": "cmd+x",
+    "k16": "cmd+z",
+
+    "w1_ccw": "KC_PAGE_UP",
+    "w1_cw": "KC_PAGE_DOWN",
+    "w1_press": "KC_ENTER",
+
+    "w2_ccw": "KC_MEDIA_PREV_TRACK",
+    "w2_cw": "KC_MEDIA_NEXT_TRACK",
+    "w2_press": "KC_MEDIA_PLAY_PAUSE",
+
+    "w3_ccw": "KC_AUDIO_VOL_DOWN",
+    "w3_cw": "KC_AUDIO_VOL_UP",
+    "w3_press": "KC_AUDIO_MUTE"
+  }
+}

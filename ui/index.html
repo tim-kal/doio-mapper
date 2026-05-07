@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>DOIO Mapper</title>
+    <link rel="stylesheet" href="/styles.css">
+  </head>
+  <body>
+    <main class="app-shell">
+      <header class="topbar">
+        <div>
+          <h1>DOIO Mapper</h1>
+          <p id="deviceStatus">Checking device...</p>
+        </div>
+        <div class="toolbar">
+          <label class="layer-field">
+            <span>Layer</span>
+            <select id="layerSelect" aria-label="Layer"></select>
+            <small id="firmwareLayerLabel">Firmware layer 0</small>
+          </label>
+          <button id="refreshButton" class="icon-button" type="button" title="Refresh bindings" aria-label="Refresh bindings">
+            <span aria-hidden="true">R</span>
+          </button>
+        </div>
+      </header>
+
+      <section class="workspace">
+        <div class="pad-panel" aria-label="Macro pad layout">
+          <div id="keyGrid" class="key-grid"></div>
+          <div id="knobArea" class="knob-area"></div>
+        </div>
+
+        <aside class="editor-panel" aria-label="Binding editor">
+          <div class="editor-heading">
+            <span id="selectedName" class="selected-name">k1</span>
+            <span id="selectedKind" class="selected-kind">key</span>
+          </div>
+
+          <label class="binding-field">
+            <span>Binding</span>
+            <input id="bindingInput" autocomplete="off" spellcheck="false" placeholder="cmd+c or KC_F13">
+          </label>
+
+          <div class="translation-row">
+            <span>Firmware</span>
+            <code id="translatedValue">-</code>
+          </div>
+
+          <div class="translation-row">
+            <span>Mac output</span>
+            <code id="outputValue">-</code>
+          </div>
+
+          <section class="live-panel" aria-label="Live input">
+            <div class="live-heading">
+              <span>Live input</span>
+              <strong id="liveStatus">Waiting</strong>
+            </div>
+            <div id="liveActive" class="live-active">No control pressed</div>
+            <div class="translation-row">
+              <span>Live trigger</span>
+              <code id="liveOutput">-</code>
+            </div>
+          </section>
+
+          <div class="button-row">
+            <button id="saveButton" class="primary-button" type="button">Save</button>
+            <button id="reloadSelectedButton" type="button">Reload</button>
+          </div>
+
+          <div class="quick-map" aria-label="Common bindings">
+            <button type="button" data-value="cmd+c">Copy</button>
+            <button type="button" data-value="cmd+v">Paste</button>
+            <button type="button" data-value="cmd+x">Cut</button>
+            <button type="button" data-value="cmd+z">Undo</button>
+            <button type="button" data-value="cmd+shift+z">Redo</button>
+            <button type="button" data-value="cmd+s">Save</button>
+            <button type="button" data-value="volume_down">Vol Down</button>
+            <button type="button" data-value="volume_up">Vol Up</button>
+            <button type="button" data-value="mute">Mute</button>
+            <button type="button" data-value="playpause">Play</button>
+          </div>
+
+          <div id="message" class="message" role="status"></div>
+        </aside>
+      </section>
+    </main>
+
+    <script src="/app.js" type="module"></script>
+  </body>
+</html>

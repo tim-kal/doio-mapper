@@ -1,0 +1,8 @@
+node_modules/
+dist/
+vendor/
+tools/doio-rawhid/target/
+hardware/snapshots/
+backups/
+layouts/current*.json
+layouts/*.local.json

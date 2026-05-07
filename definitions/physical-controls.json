@@ -1,0 +1,84 @@
+{
+  "name": "DOIO KB16B-02 physical controls",
+  "orientation": "Viewed from above with the 4x4 key grid on the left and knobs on the right.",
+  "layers": 9,
+  "naming": {
+    "keys": "k1-k16, starting top left, moving left-to-right by row.",
+    "knobs": "w1 is the left small knob, w2 is the right small knob, w3 is the large knob."
+  },
+  "controls": {
+    "k1": { "matrix": [0, 0], "liveMatrix": [4, 0], "kind": "key", "label": "Top row, first key", "live_matrix_status": "provisional_from_observed_row_rotation" },
+    "k2": { "matrix": [0, 1], "liveMatrix": [4, 1], "kind": "key", "label": "Top row, second key", "live_matrix_status": "provisional_from_observed_row_rotation" },
+    "k3": { "matrix": [0, 2], "liveMatrix": [4, 2], "kind": "key", "label": "Top row, third key", "live_matrix_status": "provisional_from_observed_row_rotation" },
+    "k4": { "matrix": [0, 3], "liveMatrix": [4, 3], "kind": "key", "label": "Top row, fourth key", "live_matrix_status": "provisional_from_observed_row_rotation" },
+
+    "k5": { "matrix": [1, 0], "liveMatrix": [0, 0], "kind": "key", "label": "Second row, first key", "live_matrix_status": "observed" },
+    "k6": { "matrix": [1, 1], "liveMatrix": [0, 1], "kind": "key", "label": "Second row, second key", "live_matrix_status": "provisional_from_observed_row_rotation" },
+    "k7": { "matrix": [1, 2], "liveMatrix": [0, 2], "kind": "key", "label": "Second row, third key", "live_matrix_status": "provisional_from_observed_row_rotation" },
+    "k8": { "matrix": [1, 3], "liveMatrix": [0, 3], "kind": "key", "label": "Second row, fourth key", "live_matrix_status": "provisional_from_observed_row_rotation" },
+
+    "k9": { "matrix": [2, 0], "liveMatrix": [1, 0], "kind": "key", "label": "Third row, first key", "live_matrix_status": "provisional_from_observed_row_rotation" },
+    "k10": { "matrix": [2, 1], "liveMatrix": [1, 1], "kind": "key", "label": "Third row, second key", "live_matrix_status": "provisional_from_observed_row_rotation" },
+    "k11": { "matrix": [2, 2], "liveMatrix": [1, 2], "kind": "key", "label": "Third row, third key", "live_matrix_status": "provisional_from_observed_row_rotation" },
+    "k12": { "matrix": [2, 3], "liveMatrix": [1, 3], "kind": "key", "label": "Third row, fourth key", "live_matrix_status": "provisional_from_observed_row_rotation" },
+
+    "k13": { "matrix": [3, 0], "liveMatrix": [2, 0], "kind": "key", "label": "Bottom row, first key", "live_matrix_status": "provisional_from_observed_row_rotation" },
+    "k14": { "matrix": [3, 1], "liveMatrix": [2, 1], "kind": "key", "label": "Bottom row, second key", "live_matrix_status": "provisional_from_observed_row_rotation" },
+    "k15": { "matrix": [3, 2], "liveMatrix": [2, 2], "kind": "key", "label": "Bottom row, third key", "live_matrix_status": "provisional_from_observed_row_rotation" },
+    "k16": { "matrix": [3, 3], "liveMatrix": [2, 3], "kind": "key", "label": "Bottom row, fourth key", "live_matrix_status": "provisional_from_observed_row_rotation" },
+
+    "w1_ccw": {
+      "matrix": [4, 6],
+      "kind": "knob_turn",
+      "label": "w1 left small knob, counter-clockwise",
+      "direction_status": "provisional_until_verified"
+    },
+    "w1_cw": {
+      "matrix": [3, 6],
+      "kind": "knob_turn",
+      "label": "w1 left small knob, clockwise",
+      "direction_status": "provisional_until_verified"
+    },
+    "w1_press": {
+      "matrix": [4, 5],
+      "kind": "knob_press",
+      "label": "w1 left small knob press"
+    },
+
+    "w2_ccw": {
+      "matrix": [1, 5],
+      "kind": "knob_turn",
+      "label": "w2 right small knob, counter-clockwise",
+      "direction_status": "provisional_until_verified"
+    },
+    "w2_cw": {
+      "matrix": [0, 5],
+      "kind": "knob_turn",
+      "label": "w2 right small knob, clockwise",
+      "direction_status": "provisional_until_verified"
+    },
+    "w2_press": {
+      "matrix": [3, 5],
+      "kind": "knob_press",
+      "label": "w2 right small knob press"
+    },
+
+    "w3_ccw": {
+      "matrix": [1, 6],
+      "kind": "knob_turn",
+      "label": "w3 large knob, counter-clockwise",
+      "direction_status": "provisional_until_verified"
+    },
+    "w3_cw": {
+      "matrix": [0, 6],
+      "kind": "knob_turn",
+      "label": "w3 large knob, clockwise",
+      "direction_status": "provisional_until_verified"
+    },
+    "w3_press": {
+      "matrix": [2, 5],
+      "kind": "knob_press",
+      "label": "w3 large knob press"
+    }
+  }
+}
